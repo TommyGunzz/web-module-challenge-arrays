@@ -169,19 +169,15 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 hint - you can use the .includes method to help you solve this */
 
 function filterByWord(oldArray,flavorOfChoc){
-    var i = 0;
-    while (i < oldArray.length) {
-      if (oldArray.includes === flavorOfChoc) {
-        oldArray.splice(i, 1);
-        console.log(flavorOfChoc[i,i+1,i+2]);
-      } else {
-        ++i;
-      };
+    let newItem=[];
+    for (let i =0; i< oldArray.length; i++) {
+      if (oldArray[i].includes(flavorOfChoc) === true) {
+        newItem.push(oldArray[i])
+         };
     };
-    return console.log(oldArray);
- } ;
-
-filterByWord(originalFlavors,"Chocolate")
+    console.log(newItem);
+ };
+filterByWord(originalFlavors,"Choc");
 
 
 
