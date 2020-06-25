@@ -28,7 +28,7 @@ var originalFlavors = ["Banana Nut Fudge",
     "Rocky Road",
     "Strawberry",
     "Vanilla",
-    "Vanilla Burnt Almond"]
+    "Vanilla Burnt Almond"];
 
 /* Task 1: Confirm that the array is exactly 31 flavors. Your function should accept:
 
@@ -40,11 +40,12 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-function is31Flavors(/*code here*/){
-
-    /*code here*/
-
+function is31Flavors(originalFlavors){
+    if (originalFlavors.length === 31) {
+        return true;
+    } return false;
 }
+console.log("Task 1: Is the array 31 flavors? " + is31Flavors(originalFlavors) );
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -57,11 +58,11 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
 
-function addFlavor(/*code here*/){
-
-    /*code here*/
-
-}
+function addFlavor(originalFlavors){
+ let newFlavors = originalFlavors.unshift("Rainbow Sherbert");
+console.log(originalFlavors);
+};
+addFlavor(originalFlavors);
 
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
@@ -74,11 +75,12 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
 
-function removeLastFlavor(/*code here*/){
-
-    /*code here*/
-
+function removeLastFlavor(originalFlavors){
+    originalFlavors.pop();
+    console.log(originalFlavors);
 }
+removeLastFlavor(originalFlavors);
+
 
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
@@ -89,11 +91,11 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(/*code here*/){
-
-    /*code here*/
-
+function getFlavorByIndex(originalFlavors){
+     console.log(originalFlavors[17]);
 }
+getFlavorByIndex(originalFlavors);
+
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -107,12 +109,29 @@ For example, removeFlavorByName(originalFlavors, "Vanilla") would return an arra
 Hint: You can use .splice() for this
 
 */
+/* var removeFlavor="Vanilla";
+function removeFlavorByName(originalFlavors, removeFlavor){
 
-function removeFlavorByName(/*code here*/){
-
-    /*code here*/
-
-}
+    for (let i = 0; i <originalFlavors.length-1; i++){
+        if(originalFlavors[i] === removeFlavor){
+            console.log(originalFlavors,[i]);}
+        };
+    };
+removeFlavorByName(originalFlavors[i]);*/
+// var value= "Vanilla";
+function removeFlavorByName(arrayFlavors, value) {
+    var i = 0;
+    while (i < arrayFlavors.length) {
+      if (arrayFlavors[i] === value) {
+        originalFlavors.splice(i, 1);
+      } else {
+        ++i;
+      }
+    }
+    return console.log(arrayFlavors);
+  }
+removeFlavorByName(originalFlavors, "Vanilla");
+        
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
@@ -254,6 +273,4 @@ var regionalFlavors = ["Pink Bubblegum",
 
 function getRandomFlavors(/*code here*/){
 
-    /*code here*/
-
-}
+} ;
