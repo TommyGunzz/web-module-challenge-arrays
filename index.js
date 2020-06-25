@@ -81,7 +81,7 @@ function removeLastFlavor(originalFlavors){
 }
 removeLastFlavor(originalFlavors);
 
-
+originalFlavors.push("Vanilla Burnt Almond");
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
 Your function should accept:
@@ -92,7 +92,7 @@ Your function should accept:
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
 function getFlavorByIndex(originalFlavors){
-     console.log(originalFlavors[17]);
+     console.log(originalFlavors[2]);
 }
 getFlavorByIndex(originalFlavors);
 
@@ -118,7 +118,7 @@ function removeFlavorByName(originalFlavors, removeFlavor){
         };
     };
 removeFlavorByName(originalFlavors[i]);*/
-// var value= "Vanilla";
+
 function removeFlavorByName(arrayFlavors, value) {
     var i = 0;
     while (i < arrayFlavors.length) {
@@ -142,11 +142,16 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(/*code here*/){
 
-    /*code here*/
-
+function copy(originalFlavors){
+    var neworiginalFlavors = [...originalFlavors];
+    console.log(neworiginalFlavors);
+    neworiginalFlavors.pop();
+    console.log(neworiginalFlavors.length);
+    console.log(originalFlavors.length);
 }
+copy(originalFlavors);
+
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
@@ -163,11 +168,21 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
+function filterByWord(oldArray,flavorOfChoc){
+    var i = 0;
+    while (i < oldArray.length) {
+      if (oldArray.includes === flavorOfChoc) {
+        oldArray.splice(i, 1);
+        console.log(flavorOfChoc[i,i+1,i+2]);
+      } else {
+        ++i;
+      };
+    };
+    return console.log(oldArray);
+ } ;
 
-    /*code here*/
+filterByWord(originalFlavors,"Chocolate")
 
-}
 
 
 
